@@ -1,0 +1,6 @@
+{
+  "name": "Chhoti Tokri — Culinary Monograph & Portfolio",
+  "description": "A minimalist, fast-loading personal brand portfolio and archival monograph celebrating single-origin terroirs, ancestral provenance, and micro-lot harvests of the Indian subcontinent.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
