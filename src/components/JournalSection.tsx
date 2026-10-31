@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import { JOURNAL_ARTICLES, JournalArticle } from '../data/journal';
+import { assetUrl } from '../lib/assets';
 
 interface JournalSectionProps {
   onReadArticle: (article: JournalArticle) => void;
@@ -46,7 +47,7 @@ export const JournalSection: React.FC<JournalSectionProps> = ({ onReadArticle, l
                 alt={article.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/assets/aistudio/Image_1_f5962f74.jpeg';
+                  (e.target as HTMLImageElement).src = assetUrl('/assets/aistudio/Image_1_f5962f74.jpeg');
                 }}
               />
               <div className="absolute top-3 left-3 bg-[#FFFFFF]/95 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] uppercase tracking-wider text-[#00351E] font-semibold shadow-xs">

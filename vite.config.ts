@@ -3,14 +3,25 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+function stripPagesRootRedirect() {
+  return {
+    name: 'strip-pages-root-redirect',
+    transformIndexHtml(html: string) {
+      return html.replace(/<script id="pages-root-redirect">[\s\S]*?<\/script>\n?/, '');
+    },
+  };
+}
+
 export default defineConfig(() => {
   return {
-    base: '/',
+    // Relative URLs so the production bundle works from /docs/ on
+    // branch-based GitHub Pages and from / if Pages later serves the build root.
+    base: './',
     build: {
       outDir: 'docs',
       emptyOutDir: true,
     },
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), stripPagesRootRedirect()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

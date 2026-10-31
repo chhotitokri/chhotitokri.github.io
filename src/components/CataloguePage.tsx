@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle, Package, Store } from 'lucide-react';
 import { PROVISIONS, Provision } from '../data/provisions';
+import { assetUrl } from '../lib/assets';
 
 interface CataloguePageProps {
   onBack: () => void;
@@ -136,12 +137,12 @@ export const CataloguePage: React.FC<CataloguePageProps> = ({
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#F4EFE6]">
                   <img
-                    src={item.mainImage}
+                    src={assetUrl(item.mainImage)}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     onError={(e) => {
                       if (item.gallery[0]?.url) {
-                        (e.target as HTMLImageElement).src = item.gallery[0].url;
+                        (e.target as HTMLImageElement).src = assetUrl(item.gallery[0].url);
                       }
                     }}
                   />

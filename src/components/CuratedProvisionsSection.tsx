@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Package } from 'lucide-react';
 import { PROVISIONS, Provision } from '../data/provisions';
+import { assetUrl } from '../lib/assets';
 
 interface CuratedProvisionsSectionProps {
   onSelectProduct: (productId: string) => void;
@@ -48,12 +49,12 @@ export const CuratedProvisionsSection: React.FC<CuratedProvisionsSectionProps> =
           >
             <div className="relative w-full h-64 overflow-hidden bg-[#F8F5EC]">
               <img
-                src={item.mainImage}
+                src={assetUrl(item.mainImage)}
                 alt={item.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   if (item.gallery[0]?.url) {
-                    (e.target as HTMLImageElement).src = item.gallery[0].url;
+                    (e.target as HTMLImageElement).src = assetUrl(item.gallery[0].url);
                   }
                 }}
               />
@@ -101,12 +102,12 @@ export const CuratedProvisionsSection: React.FC<CuratedProvisionsSectionProps> =
           >
             <div className="relative w-full h-64 overflow-hidden bg-[#F8F5EC]">
               <img
-                src={item.mainImage}
+                src={assetUrl(item.mainImage)}
                 alt={item.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 onError={(e) => {
                   if (item.gallery[0]?.url) {
-                    (e.target as HTMLImageElement).src = item.gallery[0].url;
+                    (e.target as HTMLImageElement).src = assetUrl(item.gallery[0].url);
                   }
                 }}
               />

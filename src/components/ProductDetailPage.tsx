@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, ShieldCheck, Compass, Check, ChevronRight } from 'lucide-react';
 import { PROVISIONS, Provision } from '../data/provisions';
+import { assetUrl } from '../lib/assets';
 
 interface ProductDetailPageProps {
   productId: string;
@@ -72,11 +73,11 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="relative bg-[#FFFFFF] rounded-xl overflow-hidden group shadow-[0_4px_24px_rgba(26,36,30,0.06)] border border-[#EADFC9]">
               <div className="aspect-[4/3] w-full overflow-hidden bg-[#F4EFE6]">
                 <img
-                  src={currentGalleryItem.url}
+                  src={assetUrl(currentGalleryItem.url)}
                   alt={currentGalleryItem.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = product.mainImage;
+                    (e.target as HTMLImageElement).src = assetUrl(product.mainImage);
                   }}
                 />
               </div>
@@ -100,11 +101,11 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                     }`}
                   >
                     <img
-                      src={item.url}
+                      src={assetUrl(item.url)}
                       alt={item.label}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = product.mainImage;
+                        (e.target as HTMLImageElement).src = assetUrl(product.mainImage);
                       }}
                     />
                     <div className="absolute bottom-1.5 left-1.5 text-[10px] text-[#F8F5EC] bg-[#174D32]/85 px-1.5 py-0.5 rounded tracking-wider uppercase font-semibold">
@@ -240,7 +241,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="bg-[#FFFFFF] p-6 sm:p-8 rounded-2xl shadow-xs border border-[#EADFC9]">
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-5 bg-[#F4EFE6]">
                 <img
-                  src={product.mainImage}
+                  src={assetUrl(product.mainImage)}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
@@ -371,7 +372,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
         {/* Scenic Landscape Banner */}
         <div className="relative w-full rounded-2xl overflow-hidden aspect-[16/9] md:aspect-[21/9] bg-[#F4EFE6] shadow-sm mb-10 border border-[#EADFC9]">
           <img
-            src="/assets/aistudio/Image_1_f5962f74.jpeg"
+            src={assetUrl('/assets/aistudio/Image_1_f5962f74.jpeg')}
             alt="Agricultural harvest in India"
             className="w-full h-full object-cover"
           />
@@ -415,7 +416,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="lg:col-span-6 relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#F4EFE6] shadow-[0_4px_24px_rgba(26,36,30,0.08)] border border-[#EADFC9]">
                 <img
-                  src={product.gallery[1]?.url || product.mainImage}
+                  src={assetUrl(product.gallery[1]?.url || product.mainImage)}
                   alt="Culinary preparation"
                   className="w-full h-full object-cover"
                 />

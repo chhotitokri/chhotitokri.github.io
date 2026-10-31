@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen } from 'lucide-react';
+import { assetUrl } from '../lib/assets';
 
 interface OurStorySectionProps {
   onReadMore?: () => void;
@@ -20,7 +21,7 @@ export const OurStorySection: React.FC<OurStorySectionProps> = ({ onReadMore, la
                   alt="Rural Indian harvest basket tokri under an ancient banyan tree at dawn"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/assets/aistudio/Image_1_f5962f74.jpeg';
+                    (e.target as HTMLImageElement).src = assetUrl('/assets/aistudio/Image_1_f5962f74.jpeg');
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00351E]/80 via-transparent to-transparent"></div>

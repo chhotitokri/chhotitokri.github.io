@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, BookOpen, Sparkles, CheckCircle2 } from 'lucide-react';
+import { assetUrl } from '../lib/assets';
 
 interface HeroSectionProps {
   onExploreProducts: () => void;
@@ -78,7 +79,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 className="w-full h-full object-cover transform duration-700 group-hover:scale-105"
                 onError={(e) => {
                   // Fallback to local asset
-                  (e.target as HTMLImageElement).src = '/assets/aistudio/Image_1_f5962f74.jpeg';
+                  (e.target as HTMLImageElement).src = assetUrl('/assets/aistudio/Image_1_f5962f74.jpeg');
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#00351E]/90 via-[#00351E]/25 to-transparent"></div>
