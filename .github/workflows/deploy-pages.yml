@@ -33,13 +33,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Include custom domain CNAME
-        run: cp CNAME dist/CNAME
+      - name: Verify production HTML
+        run: |
+          test -f docs/index.html
+          grep -q '/assets/index-' docs/index.html
+          ! grep -q '/src/main.tsx' docs/index.html
+          test -f docs/CNAME
+          test -f docs/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: docs
 
   deploy:
     needs: build

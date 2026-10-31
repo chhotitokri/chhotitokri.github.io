@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-fixed": "#281900",
+          "secondary-container": "#fec973",
+          "on-tertiary-fixed": "#201b0e",
+          "on-primary-fixed-variant": "#1b5035",
+          "secondary-fixed-dim": "#f2be69",
+          "primary-fixed-dim": "#9cd3af",
+          "surface-container-high": "#e0ebe1",
+          "surface-bright": "#f1fcf2",
+          "secondary-fixed": "#ffdead",
+          "on-error": "#ffffff",
+          "on-secondary-container": "#785202",
+          "surface-variant": "#dae5dc",
+          "inverse-surface": "#28332c",
+          "background": "#f1fcf2",
+          "on-surface-variant": "#414942",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#4d4636",
+          "inverse-on-surface": "#e8f4ea",
+          "primary": "#00351e",
+          "on-secondary-fixed-variant": "#604100",
+          "on-tertiary": "#ffffff",
+          "on-background": "#141e18",
+          "secondary": "#7e5707",
+          "surface-container-lowest": "#ffffff",
+          "tertiary": "#332d1e",
+          "on-tertiary-container": "#bab09b",
+          "surface-container-highest": "#dae5dc",
+          "outline-variant": "#c0c9c0",
+          "on-surface": "#141e18",
+          "error-container": "#ffdad6",
+          "surface": "#f1fcf2",
+          "on-primary-container": "#86bd9a",
+          "on-secondary": "#ffffff",
+          "surface-tint": "#34684b",
+          "on-primary-fixed": "#002111",
+          "error": "#ba1a1a",
+          "inverse-primary": "#9cd3af",
+          "surface-container-low": "#ebf7ed",
+          "tertiary-fixed": "#ece1cb",
+          "tertiary-fixed-dim": "#d0c5b0",
+          "outline": "#717972",
+          "on-error-container": "#93000a",
+          "surface-container": "#e5f1e7",
+          "tertiary-container": "#4a4333",
+          "surface-dim": "#d1ddd3",
+          "primary-fixed": "#b7efca",
+          "primary-container": "#174d32"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "space-lg": "2rem",
+          "margin-mobile": "1.25rem",
+          "space-sm": "0.5rem",
+          "margin-tablet": "2.5rem",
+          "gutter": "2rem",
+          "margin": "4rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-xl": "3.5rem"
+        },
+        "fontFamily": {
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Playfair Display"
+          ],
+          "headline-sm": [
+            "Playfair Display"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Playfair Display"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Playfair Display"
+          ],
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "display-lg-mobile": [
+            "Playfair Display"
+          ],
+          "display-lg": [
+            "Playfair Display"
+          ]
+        },
+        "fontSize": {
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.14em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "0",
+              "fontWeight": "500"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.015em",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "12px",
+              "letterSpacing": "0.16em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "0",
+              "fontWeight": "400"
+            }
+          ],
+          "label-lg": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.12em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-lg-mobile": [
+            "38px",
+            {
+              "lineHeight": "46px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "display-lg": [
+            "56px",
+            {
+              "lineHeight": "64px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(26,36,30,0.05)]"><div class="h-20 w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="flex items-center gap-3 group" data-path="home" href="#"><img alt="Chhoti Tokri Monogram" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VKUDmsTZrEuLBOy4WGeuMFCn7HUq6hz58vInT65v4nmLEx2otaUMYSfjhiyK3yWShVJM0wrwPuUq4WoUzyQICdFmK1OjVoM8sV9pW5cijkWIHACfZTQ6XCATAnbF6lotlQabh-GxGP72aT-kDCfo5MP5R7glbUaVPvuFLl1JQN6VN1mrXrPeLup_T7NlvHYXGCIrFWjm4HcQ7XPx8XgTRxPdenoZ0YvqoesALS-X0S45kv0p_4tx99bI4dWvzdv9nV-ehME56Row"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-wide text-primary leading-none group-hover:text-secondary transition-colors">CHHOTI TOKRI</span><span class="font-label-sm text-label-sm tracking-widest text-secondary uppercase">Atelier Botanique</span></div></a></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold border-b border-secondary pb-1"><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="home" href="#">Home</a><a aria-current="page" class="uppercase tracking-wider transition-colors text-primary font-semibold border-b border-secondary pb-1" data-path="our-products" href="#">Our Products</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="our-story" href="#">Our Story</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="sourcing-and-quality" href="#">Sourcing &amp; Quality</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="journal" href="#">Journal</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#">Contact</a></nav><div class="flex items-center gap-space-md"><a class="inline-flex items-center justify-center px-5 py-2.5 bg-primary-container text-on-primary font-label-md text-label-md tracking-widest uppercase rounded-lg hover:bg-primary transition-all duration-300 shadow-[0_1px_4px_rgba(23,77,50,0.15)]" data-path="business-enquiries" href="#">Business Enquiries</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VKUDmsTZrEuLBOy4WGeuMFCn7HUq6hz58vInT65v4nmLEx2otaUMYSfjhiyK3yWShVJM0wrwPuUq4WoUzyQICdFmK1OjVoM8sV9pW5cijkWIHACfZTQ6XCATAnbF6lotlQabh-GxGP72aT-kDCfo5MP5R7glbUaVPvuFLl1JQN6VN1mrXrPeLup_T7NlvHYXGCIrFWjm4HcQ7XPx8XgTRxPdenoZ0YvqoesALS-X0S45kv0p_4tx99bI4dWvzdv9nV-ehME56Row"></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-20rem)]"><div class="flex flex-col w-full">
+<!-- Top Archival Bar & Breadcrumb -->
+<section class="w-full bg-surface-bright py-space-md border-b border-surface-variant">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">
+<div class="flex items-center gap-2">
+<a class="hover:text-primary transition-colors" data-path="home" href="#">Home</a>
+<span class="text-secondary opacity-60">/</span>
+<span class="text-primary font-semibold">Our Products</span>
+</div>
+<div class="flex items-center gap-3 text-secondary tracking-widest">
+<span class="">VOL. IV</span>
+<span class="opacity-40">•</span>
+<span class="">ARCHIVAL COLLECTION</span>
+<span class="opacity-40">•</span>
+<span class="">EDITION 2025</span>
+</div>
+</div>
+</section>
+<!-- Editorial Monograph Intro -->
+<section class="w-full bg-surface py-space-xl lg:py-24 relative overflow-hidden">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-end">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-secondary"><span class="w-6 h-px bg-secondary"></span>Curated Provisions for Discerning Kitchens &amp; Purveyors</div>
+<h1 class="font-headline-lg text-headline-lg lg:text-display-lg text-primary tracking-tight leading-tight">
+            Our Products
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mt-2">
+            Discover a considered selection of Indian food products, inspired by regional culinary traditions and chosen with care.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end lg:items-end">
+<div class="bg-surface-container-low p-space-md rounded-xl max-w-sm w-full shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Curatorial Scope</span>
+<span class="material-symbols-outlined text-secondary text-sm">spa</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Strictly preserved single-origin cultivars, traditional milling, and sun-concentrated botanical harvests for discerning kitchens and culinary partners.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curatorial Filter Bar -->
+<section class="w-full bg-surface-container-low sticky top-20 z-40 shadow-sm">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto py-4">
+<div class="flex items-center justify-between overflow-x-auto no-scrollbar gap-4">
+<div class="flex items-center gap-2 sm:gap-3 shrink-0" id="filter-container">
+<button class="filter-btn active-filter px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-primary-container text-on-primary" data-filter="all" type="button">
+            All Products <span class="ml-1 opacity-75">(5)</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high" data-filter="rice" type="button">
+            Rice <span class="ml-1 opacity-75">(1)</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high" data-filter="oils" type="button">
+            Oils <span class="ml-1 opacity-75">(1)</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high" data-filter="honey" type="button">
+            Honey <span class="ml-1 opacity-75">(1)</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high" data-filter="spices" type="button">
+            Spices <span class="ml-1 opacity-75">(1)</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all duration-200 bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-container-high" data-filter="fruits" type="button">
+            Dehydrated Fruits <span class="ml-1 opacity-75">(1)</span>
+</button>
+</div>
+<div class="hidden md:flex items-center gap-2 font-label-sm text-label-sm text-secondary uppercase tracking-widest shrink-0"><span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>Selected Harvests</div>
+</div>
+</div>
+</section>
+<!-- Product Catalogue Grid -->
+<section class="w-full bg-surface py-space-xl">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="product-grid">
+<!-- Product 1: Kala Namak Rice -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="rice">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Close up photograph of uncooked Kala Namak black scented rice grains resting in a traditional unglazed terracotta bowl, soft warm morning lighting, natural botanical tones of charcoal, parchment, and warm amber, editorial culinary composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvi9-WSWaPcbi5W0iYfkRrtRYoKDHgG_Oa3gEO9LdZWVlTnYNU9Y8QhBN-5hggSo-FyAT9VO0vxgAZu08pMmq_gTcdgQDXfYxlMp-SgSelaVNNRPRRmvS6z2h6b_OqlG03Sn5EBB2TkoPstGKKPLIA2EYjeNVXatrbeo0VsdS5Z-4ONZfYC7wXy-jaGTcCAdxStgyrCm86dG1oIC1cqh2I8CUqvSusSgmZv66q131KJoQDlBwj0GwM">
+<div class="absolute top-4 left-4 bg-surface-bright/95 backdrop-blur-sm px-3 py-1 rounded-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Aromatic Rice</span>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2.5 py-1 rounded-md text-[10px] font-label-sm uppercase tracking-widest">
+              Monograph #01
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md tracking-widest uppercase text-secondary font-medium">
+                Eastern Uttar Pradesh • Siddharthnagar Region
+              </span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:text-secondary transition-colors">
+                Kala Namak Rice
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3">
+                A traditional aromatic rice variety associated with eastern Uttar Pradesh and the Siddharthnagar region.
+              </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-widest uppercase text-primary font-semibold group-hover:text-secondary transition-colors" data-path="business-enquiries" href="#">
+<span class="">Discover Product</span>
+<span class="material-symbols-outlined text-secondary text-base group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Product 2: Traditional Mustard Oil -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="oils">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Artisanal glass flask containing golden unfiltered cold-pressed mustard oil with yellow mustard seeds scattered on a sun-dappled raw wooden worktop, deep forest green backdrop, quiet luxury food styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh4jgb0UAvFdWBcYz34lQvEjZP1Y9TsMewO4mIjvluueN6sznAJ6YZ2yNlfh2FTBnCL3Pvb-tJg0iO4q_OBQn4XA5p1gaea0RNIL-sdjn3fB-S_NAaWjSEoJGGS5DolAl2V5Y1xe_Vp5Cemxt-cv190rzu0NLus466vxwX_Pp_HtczRyxiyYnWi5NmYx-AhbeKK_zBTVkHN6TxUZUI8h5mD7VSFJN2zO4pUyIbre4NkUKCAiGCeBHK">
+<div class="absolute top-4 left-4 bg-surface-bright/95 backdrop-blur-sm px-3 py-1 rounded-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Cold Extraction</span>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2.5 py-1 rounded-md text-[10px] font-label-sm uppercase tracking-widest">
+              Monograph #02
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md tracking-widest uppercase text-secondary font-medium">
+                Traditional Cold Pressed • Northern Terroirs
+              </span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:text-secondary transition-colors">
+                Traditional Mustard Oil
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3">
+                Mustard oil for traditional Indian kitchens. Processing details will be added once confirmed.
+              </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-widest uppercase text-primary font-semibold group-hover:text-secondary transition-colors" data-path="business-enquiries" href="#">
+<span class="">Discover Product</span>
+<span class="material-symbols-outlined text-secondary text-base group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Product 3: Honey -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="honey">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Minimalist stoneware container filled with rich amber raw forest flora honey, accompanied by a carved botanical wooden dipper, warm morning sunlight, deep shadows, authentic natural textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbZbQ4-KmWRW2KbWqiDgdKvcskD3Chc7jDf5VwN2r6rg27OUyQWtyvzbCKqPN5z2Sf4KhAOj2_rnQXJCfPwFKv0549VqhWCkvUWqAjxhUZKUIalImMPD977q8b09ApP2xmRUDZHMS97Llqbj0MckYs1aNiCr7T1C5Hl3v6wlCok84RuBwiT5XtvKXijr6WVTEPosq_mqizyOmDE1nctQZqdaQ-fAS4oyuNPNbUqospWmYRUknRy3-P">
+<div class="absolute top-4 left-4 bg-surface-bright/95 backdrop-blur-sm px-3 py-1 rounded-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Raw Forest Honey</span>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2.5 py-1 rounded-md text-[10px] font-label-sm uppercase tracking-widest">
+              Monograph #03
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md tracking-widest uppercase text-secondary font-medium">
+                Forest Flora • Raw &amp; Unheated
+              </span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:text-secondary transition-colors">
+                Honey
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3">
+                Honey selected with attention to its source, character and quality.
+              </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-widest uppercase text-primary font-semibold group-hover:text-secondary transition-colors" data-path="business-enquiries" href="#">
+<span class="">Discover Product</span>
+<span class="material-symbols-outlined text-secondary text-base group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Product 4: Turmeric -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="spices">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Sun-dried whole golden turmeric rhizomes alongside freshly pounded vibrant orange curcuma powder on hand-woven parchment, warm earthy light, high-contrast fine press editorial photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHGQ6U1rs7lb8maJZJLrsik-ZhKt5DAF9lJnRv3yPD0MWo40GbQ5gs6Kemm-nxpfIMLpAyzxxVg0FJJmB99lGIX2MHtwGNRgR_mB1t5USMeW0CYQfTyyOvLKJUA4n3yujzhwgqPkDFXiemNdVZaH0uIoSRXnGs3PgX7axSQNytrS0Mmcd4b8DHKqBrV_WQgPYB7jW791cTqansSuBvU-3-53sWrZyy8oMO3uvwnNg7gHs6zSpOeR21">
+<div class="absolute top-4 left-4 bg-surface-bright/95 backdrop-blur-sm px-3 py-1 rounded-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Sun-Dried Spice</span>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2.5 py-1 rounded-md text-[10px] font-label-sm uppercase tracking-widest">
+              Monograph #04
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md tracking-widest uppercase text-secondary font-medium">
+                Ancestral Rhizome • Sun-Dried
+              </span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:text-secondary transition-colors">
+                Turmeric
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3">
+                A familiar Indian spice valued for its colour, aroma and place in everyday cooking.
+              </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-widest uppercase text-primary font-semibold group-hover:text-secondary transition-colors" data-path="business-enquiries" href="#">
+<span class="">Discover Product</span>
+<span class="material-symbols-outlined text-secondary text-base group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Product 5: Dehydrated Fruits -->
+<article class="product-card group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300" data-category="fruits">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="Artisanal arrangement of sun-dehydrated orchard fruit slices arranged on an antique brass tray, delicate natural sugar crystals, warm golden hour sunbeams, muted earthy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC72oPfVruPl86iEzn7bmD9GUidY7kqFndLU8viCIQXHs54kmKJBcxDDF9uNiXRyeLhq4l0h4xQYgmvitOBRUzjlvSvjtbixfPq9brlLW9E60SI_cKaw8V1qwCL5U2q7kvZZC62mZzbcHOQlTvkMPfbZ99U1pCCwsJkNCOUFF7LwlTHI8DXLcHZ8q7WV0SW7LPAn5wCzYWpk4mjWFUpaefXcp2V-21AMUTC6uD3wjzpe3Fw4klIeMRJ">
+<div class="absolute top-4 left-4 bg-surface-bright/95 backdrop-blur-sm px-3 py-1 rounded-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Sun-Dried Fruits</span>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-2.5 py-1 rounded-md text-[10px] font-label-sm uppercase tracking-widest">
+              Monograph #05
+            </div>
+</div>
+<div class="p-space-lg flex flex-col flex-grow justify-between gap-space-md">
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md tracking-widest uppercase text-secondary font-medium">
+                Sun-Ripened Harvest • Solar Dehydrated
+              </span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight group-hover:text-secondary transition-colors">
+                Dehydrated Fruits
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed line-clamp-3">
+                Fruit in a convenient dried format, with varieties and processing details to be confirmed.
+              </p>
+</div>
+<div class="pt-4 mt-auto">
+<a class="inline-flex items-center gap-2 font-label-md text-label-md tracking-widest uppercase text-primary font-semibold group-hover:text-secondary transition-colors" data-path="business-enquiries" href="#">
+<span class="">Discover Product</span>
+<span class="material-symbols-outlined text-secondary text-base group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Archival Placeholder / Spec Dossier Card -->
+<article class="flex flex-col bg-surface-container p-space-lg rounded-xl justify-between shadow-sm"><div class="flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Terroir Dossiers</span><span class="material-symbols-outlined text-secondary">menu_book</span></div><h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Trade &amp; Bulk Inquiries</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Evaluations for specialty grocers, chefs, and retail partners seeking authentic regional provisions.</p><div class="pt-2 flex flex-col gap-2 font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span><span class="">Custom packaging formats available</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span><span class="">Traceable provenance documents</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-base">check_circle</span><span class="">Direct regional sourcing</span></div></div></div><div class="pt-6"><a class="w-full inline-flex items-center justify-center py-2.5 px-4 bg-surface-bright text-primary font-label-md text-label-md tracking-widest uppercase rounded-lg hover:bg-primary hover:text-on-primary transition-all duration-300" href="mailto:liaison@chhotitokri.com">Request Trade Catalogue</a></div></article>
+</div>
+</div>
+</section>
+<!-- Editorial Note Box: Bespoke Packaging & Wholesale Specs -->
+<section class="w-full bg-surface pb-space-xl">
+<div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto">
+<div class="bg-surface-container-high rounded-xl p-space-lg lg:p-space-xl relative overflow-hidden shadow-sm">
+<div class="max-w-3xl flex flex-col gap-space-xs">
+<div class="flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-secondary">
+<span class="material-symbols-outlined text-base">inventory_2</span>
+<span class="">Commercial Protocol</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary">
+            Bespoke Packaging &amp; Bulk Wholesale Specifications
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Custom pack sizes, institutional supply schedules, and regional harvesting details are available upon enquiry for retail distributors and culinary establishments.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Partnership & International Trade Desk Section -->
+<section class="w-full bg-primary-container text-on-primary py-space-xl lg:py-24"><div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto"><div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center"><div class="lg:col-span-7 flex flex-col gap-space-md"><div class="inline-flex items-center gap-2 font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim"><span class="w-8 h-px bg-secondary-fixed-dim"></span>RETAIL, DISTRIBUTION &amp; WHOLESALE</div><h2 class="font-headline-lg text-headline-lg lg:text-display-lg text-on-primary tracking-tight leading-tight">Looking to Partner with Chhoti Tokri?</h2><p class="font-body-lg text-body-lg text-surface-container-high max-w-xl leading-relaxed">Connect with us to learn more about our product range and explore potential business opportunities.</p><div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md"><a class="inline-flex items-center justify-center px-8 py-3.5 bg-secondary-container text-on-secondary-container font-label-md text-label-md tracking-widest uppercase rounded-lg hover:bg-secondary-fixed transition-colors font-semibold shadow-md" data-path="business-enquiries" href="#">Contact Us</a><a class="inline-flex items-center justify-center px-6 py-3.5 bg-primary text-on-primary font-label-md text-label-md tracking-widest uppercase rounded-lg hover:bg-on-primary-fixed-variant transition-colors" href="mailto:liaison@chhotitokri.com">liaison@chhotitokri.com</a></div></div><div class="lg:col-span-5 bg-primary/40 rounded-xl p-space-lg backdrop-blur-sm shadow-inner flex flex-col gap-space-md"><div class="flex items-center justify-between pb-3"><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed-dim">Domestic Trade Desk</span><span class="material-symbols-outlined text-secondary-fixed-dim text-lg">storefront</span></div><div class="flex flex-col gap-space-sm font-body-sm text-body-sm text-surface-container-high"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary-fixed-dim text-lg shrink-0 mt-0.5">location_on</span><div><p class="font-medium text-on-primary">Trade Liaison — New Delhi</p><p class="text-xs text-on-primary-container">Civil Lines • Direct Provenance &amp; Domestic Logistics</p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary-fixed-dim text-lg shrink-0 mt-0.5">mail</span><div><p class="font-medium text-on-primary">Partnership Enquiries</p><p class="text-xs text-on-primary-container">Direct enquiries for retail shelves, boutique groceries, gifting &amp; institutional partnerships</p></div></div></div><div class="pt-4 mt-2"><div class="flex items-center justify-between text-xs font-label-sm uppercase tracking-widest text-secondary-fixed-dim"><span class="">Direct Inquiries</span><span class="text-on-primary font-medium">B2B Domestic Trade</span></div><div class="w-full bg-primary h-1 rounded-full mt-2 overflow-hidden"><div class="bg-secondary-fixed-dim h-full w-3/4"></div></div></div></div></div></div></section>
+</div>
+<script>
+  (function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        // Toggle button active classes
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-primary-container', 'text-on-primary');
+          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        button.classList.add('bg-primary-container', 'text-on-primary');
+
+        // Filter cards
+        productCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
+</script></main><footer class="w-full bg-surface-container-low text-on-surface py-space-xl"><div class="w-full px-margin-mobile md:px-margin-tablet lg:px-margin max-w-[1440px] mx-auto"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-lg mb-space-xl"><div class="lg:col-span-5 flex flex-col gap-space-md pr-0 lg:pr-space-lg"><div class="flex items-center gap-3"><img alt="Chhoti Tokri Monogram" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VKUDmsTZrEuLBOy4WGeuMFCn7HUq6hz58vInT65v4nmLEx2otaUMYSfjhiyK3yWShVJM0wrwPuUq4WoUzyQICdFmK1OjVoM8sV9pW5cijkWIHACfZTQ6XCATAnbF6lotlQabh-GxGP72aT-kDCfo5MP5R7glbUaVPvuFLl1JQN6VN1mrXrPeLup_T7NlvHYXGCIrFWjm4HcQ7XPx8XgTRxPdenoZ0YvqoesALS-X0S45kv0p_4tx99bI4dWvzdv9nV-ehME56Row"><span class="font-headline-md text-headline-md text-primary tracking-tight">CHHOTI TOKRI</span></div><p class="font-label-md text-label-md tracking-widest text-secondary uppercase">Good Food • Brighter Days</p><p class="font-body-md text-body-md text-on-surface-variant max-w-md leading-relaxed">An archival monograph celebrating single-origin terroirs, ancestral provenance, and mindful micro-lot harvests of the Indian subcontinent.</p></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-2">Provisions</h4><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="our-products" href="#">Kala Namak Rice</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="our-products" href="#">Cold-Pressed Mustard Oil</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="our-products" href="#">Wild Forest Honey</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="our-products" href="#">Lakadong Turmeric</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="our-products" href="#">Sun-Dehydrated Fruits</a></li></ul></div><div class="lg:col-span-2 flex flex-col gap-space-sm"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-2">Curatorial</h4><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant"><li class=""><a class="hover:text-primary transition-colors" data-path="our-story" href="#">Our Story</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="sourcing-and-quality" href="#">Sourcing &amp; Quality</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="journal" href="#">Journal &amp; Field Notes</a></li><li class=""><a class="hover:text-primary transition-colors" data-path="business-enquiries" href="#">Trade Enquiries</a></li></ul></div><div class="lg:col-span-3 flex flex-col gap-space-sm p-space-md bg-surface-container rounded-lg"><h4 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Trade &amp; Distribution Desk</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Direct liaison for domestic retail partners, specialty grocers, and culinary purveyors.</p><a class="font-label-md text-label-md text-primary font-semibold tracking-wider hover:text-secondary transition-colors" href="mailto:liaison@chhotitokri.com">liaison@chhotitokri.com</a><div class="pt-2 flex flex-col gap-1 font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase"><span class="">Domestic Trade Enquiries: New Delhi</span><span class="">Civil Lines Regional Liaison</span></div></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"><p class="">© 2024 Chhoti Tokri Culinary Monograph. Archival Edition.</p><div class="flex items-center gap-space-md"><a class="hover:text-primary transition-colors" href="#">Provenance Registry</a><a class="hover:text-primary transition-colors" href="#">Trade Enquiries</a><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></div></div></div></footer>
+
+</body></html>
