@@ -77,6 +77,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtXwrqhYj9TnVwER7EWgrmNH6yR4uRMC_bG2R3eHpVJQViuUqX89D7mRMj2NZOc3vvdvccpsn9f2ytkAQso9FX6mn7kUnDRmyXbb64Iy20OtxJq72dFqOBFjKYX4sNYtMEKJFOb2l4LyauSnZEk-GGxw4nW6VX6Q1oTcQKF4IjQI81VCvK20vOBDN1dzPaMXuMOIf8gxkEUWt5RVe3yZZ6otHcVgbbPSchBZYTBZAVLemD4c5aJe0g"
                 alt="Ancestral Indian harvest ingredients in hand-carved teakwood vessels"
                 className="w-full h-full object-cover transform duration-700 group-hover:scale-105"
+                width={960}
+                height={460}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 onError={(e) => {
                   // Fallback to local asset
                   (e.target as HTMLImageElement).src = assetUrl('/assets/aistudio/Image_1_f5962f74.jpeg');

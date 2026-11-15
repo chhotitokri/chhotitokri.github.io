@@ -14,9 +14,7 @@ function stripPagesRootRedirect() {
 
 export default defineConfig(() => {
   return {
-    // Relative URLs so the production bundle works from /docs/ on
-    // branch-based GitHub Pages and from / if Pages later serves the build root.
-    base: './',
+    base: '/',
     build: {
       outDir: 'docs',
       emptyOutDir: true,

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Mail, Clock, Store, ShieldCheck, Utensils, Globe, Sparkles } from 'lucide-react';
+import { Mail, Clock, Store, ShieldCheck, Utensils, Globe, Sparkles, Phone } from 'lucide-react';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from '../lib/contact';
+import { trackEvent } from '../analytics/gtag';
 
 interface TradeEnquirySectionProps {
   onOpenModal: () => void;
@@ -100,11 +102,20 @@ export const TradeEnquirySection: React.FC<TradeEnquirySectionProps> = ({ onOpen
 
               <div className="space-y-3 mb-6 text-[13px] text-[#1B241E]">
                 <a
-                  href="mailto:liaison@chhotitokri.com?subject=Chhoti%20Tokri%20Partnership%20Enquiry"
+                  href={`mailto:${CONTACT_EMAIL}?subject=Chhoti%20Tokri%20Partnership%20Enquiry`}
                   className="flex items-center gap-3 p-3.5 bg-[#F8F5EC] rounded border border-[#E8E1D3] hover:border-[#174D32] transition-colors group"
+                  onClick={() => trackEvent('email_click', {link_location: 'trade_section'})}
                 >
                   <Mail className="w-4 h-4 text-[#174D32] group-hover:text-[#B88A3B]" />
-                  <span className="font-semibold text-[#174D32]">liaison@chhotitokri.com</span>
+                  <span className="font-semibold text-[#174D32]">{CONTACT_EMAIL}</span>
+                </a>
+                <a
+                  href={`tel:${CONTACT_PHONE}`}
+                  className="flex items-center gap-3 p-3.5 bg-[#F8F5EC] rounded border border-[#E8E1D3] hover:border-[#174D32] transition-colors group"
+                  onClick={() => trackEvent('phone_click', {link_location: 'trade_section'})}
+                >
+                  <Phone className="w-4 h-4 text-[#174D32] group-hover:text-[#B88A3B]" />
+                  <span className="font-semibold text-[#174D32]">{CONTACT_PHONE_DISPLAY}</span>
                 </a>
 
                 <div className="flex items-center gap-3 p-3.5 bg-[#F8F5EC] rounded border border-[#E8E1D3]">

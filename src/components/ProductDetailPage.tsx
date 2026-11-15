@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, ShieldCheck, Compass, Check, ChevronRight } from 'lucide-react';
 import { PROVISIONS, Provision } from '../data/provisions';
 import { assetUrl } from '../lib/assets';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from '../lib/contact';
+import { trackEvent } from '../analytics/gtag';
 
 interface ProductDetailPageProps {
   productId: string;
@@ -538,11 +540,27 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
               >
                 Initiate Trade Enquiry
               </button>
-              <div className="text-xs text-[#E6EFEA]/80 text-left lg:text-right">
-                <span>Direct Liaison: </span>
-                <a href="mailto:liaison@chhotitokri.com" className="text-[#FFDEAD] hover:underline">
-                  liaison@chhotitokri.com
-                </a>
+              <div className="text-xs text-[#E6EFEA]/80 text-left lg:text-right space-y-0.5">
+                <div>
+                  <span>Email: </span>
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="text-[#FFDEAD] hover:underline"
+                    onClick={() => trackEvent('email_click', {link_location: 'product_detail'})}
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                </div>
+                <div>
+                  <span>Phone: </span>
+                  <a
+                    href={`tel:${CONTACT_PHONE}`}
+                    className="text-[#FFDEAD] hover:underline"
+                    onClick={() => trackEvent('phone_click', {link_location: 'product_detail'})}
+                  >
+                    {CONTACT_PHONE_DISPLAY}
+                  </a>
+                </div>
               </div>
             </div>
           </div>

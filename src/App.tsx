@@ -1,212 +1,170 @@
-import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { BottomNav } from './components/BottomNav';
-import { HeroSection } from './components/HeroSection';
-import { PhilosophySection } from './components/PhilosophySection';
-import { CuratedProvisionsSection } from './components/CuratedProvisionsSection';
-import { OurStorySection } from './components/OurStorySection';
-import { ProvenanceProtocolSection } from './components/ProvenanceProtocolSection';
-import { JournalSection } from './components/JournalSection';
-import { TradeEnquirySection } from './components/TradeEnquirySection';
-import { Footer } from './components/Footer';
-import { ProductDetailPage } from './components/ProductDetailPage';
-import { CataloguePage } from './components/CataloguePage';
-import { EnquiryModal } from './components/EnquiryModal';
-import { JournalReaderModal } from './components/JournalReaderModal';
-import { JournalArticle, JOURNAL_ARTICLES } from './data/journal';
+import React, {useState} from 'react';
+import {Navigate, Route, Routes, useLocation, useParams} from 'react-router-dom';
+import {Navbar} from './components/Navbar';
+import {BottomNav} from './components/BottomNav';
+import {Footer} from './components/Footer';
+import {CataloguePage} from './components/CataloguePage';
+import {ProductDetailPage} from './components/ProductDetailPage';
+import {EnquiryModal} from './components/EnquiryModal';
+import {SeoHead} from './seo/SeoHead';
+import {getViewFromPath, paths} from './seo/routes';
+import {useAppNavigation} from './hooks/useAppNavigation';
+import {HomePage} from './pages/HomePage';
+import {AboutPage} from './pages/AboutPage';
+import {SourcingPage} from './pages/SourcingPage';
+import {JournalIndexPage} from './pages/JournalIndexPage';
+import {JournalArticlePage} from './pages/JournalArticlePage';
+import {ContactPage} from './pages/ContactPage';
+import {LegalPage} from './pages/LegalPage';
+import {JournalArticle} from './data/journal';
+import {trackEvent} from './analytics/gtag';
+
+function ProductRoute({
+  lang,
+  onSelectProduct,
+  onOpenEnquiry,
+  onBack,
+}: {
+  lang: 'en' | 'fr';
+  onSelectProduct: (id: string) => void;
+  onOpenEnquiry: () => void;
+  onBack: () => void;
+}) {
+  const {productId = 'kala-namak-rice'} = useParams<{productId: string}>();
+  React.useEffect(() => {
+    trackEvent('view_item', {item_id: productId});
+  }, [productId]);
+
+  return (
+    <ProductDetailPage
+      productId={productId}
+      onBack={onBack}
+      onSelectProduct={onSelectProduct}
+      onOpenEnquiry={onOpenEnquiry}
+      lang={lang}
+    />
+  );
+}
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'catalogue' | 'product-detail'>('home');
-  const [selectedProductId, setSelectedProductId] = useState<string>('kala-namak-rice');
-  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState<boolean>(false);
-  const [selectedArticle, setSelectedArticle] = useState<JournalArticle | null>(null);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const [lang, setLang] = useState<'en' | 'fr'>('en');
+  const location = useLocation();
+  const currentView = getViewFromPath(location.pathname);
+  const {handleNavigate, handleSelectProduct, openJournalArticle} = useAppNavigation();
 
-  // Handle URL hash changes for GitHub Pages static hosting compatibility
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash.startsWith('product/')) {
-        const prodId = hash.replace('product/', '');
-        setSelectedProductId(prodId);
-        setCurrentView('product-detail');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (hash === 'catalogue') {
-        setCurrentView('catalogue');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (hash === 'story') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else if (hash === 'provenance') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('provenance')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else if (hash === 'journal') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('journal')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else if (hash === 'contact' || hash === 'trade' || hash === 'enquire') {
-        setIsEnquiryModalOpen(true);
-      } else if (hash === 'home' || !hash) {
-        setCurrentView('home');
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const handleNavigate = (view: string, productId?: string) => {
-    if (view === 'product-detail') {
-      if (productId) setSelectedProductId(productId);
-      setCurrentView('product-detail');
-      window.location.hash = `product/${productId || selectedProductId}`;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (view === 'catalogue') {
-      setCurrentView('catalogue');
-      window.location.hash = 'catalogue';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (view === 'story') {
-      if (currentView !== 'home') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
-      }
-      window.location.hash = 'story';
-    } else if (view === 'provenance') {
-      if (currentView !== 'home') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('provenance')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        document.getElementById('provenance')?.scrollIntoView({ behavior: 'smooth' });
-      }
-      window.location.hash = 'provenance';
-    } else if (view === 'journal') {
-      if (currentView !== 'home') {
-        setCurrentView('home');
-        setTimeout(() => {
-          document.getElementById('journal')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        document.getElementById('journal')?.scrollIntoView({ behavior: 'smooth' });
-      }
-      window.location.hash = 'journal';
-    } else if (view === 'contact') {
-      setIsEnquiryModalOpen(true);
-    } else {
-      setCurrentView('home');
-      window.location.hash = 'home';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  const openEnquiry = () => {
+    setIsEnquiryModalOpen(true);
+    trackEvent('product_enquiry', {page_path: location.pathname});
   };
 
-  const handleSelectProduct = (id: string) => {
-    setSelectedProductId(id);
-    setCurrentView('product-detail');
-    window.location.hash = `product/${id}`;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleReadArticle = (article: JournalArticle) => {
+    openJournalArticle(article.id);
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5EC] text-[#1B241E] flex flex-col font-sans selection:bg-[#B88A3B]/20 selection:text-[#00351E]">
-      {/* Universal Top Navigation Header */}
+    <>
+      <SeoHead />
+      <div className="min-h-screen bg-[#F8F5EC] text-[#1B241E] flex flex-col font-sans selection:bg-[#B88A3B]/20 selection:text-[#00351E]">
       <Navbar
         currentView={currentView}
         onNavigate={handleNavigate}
-        onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+        onOpenEnquiry={openEnquiry}
         lang={lang}
         setLang={setLang}
       />
 
-      {/* Main View Router */}
       <main className="flex-1 w-full flex flex-col">
-        {currentView === 'home' && (
-          <>
-            <HeroSection
-              onExploreProducts={() => handleNavigate('catalogue')}
-              onExploreStory={() => handleNavigate('story')}
-              lang={lang}
-            />
-            <PhilosophySection lang={lang} />
-            <CuratedProvisionsSection
-              onSelectProduct={handleSelectProduct}
-              onRequestTrade={() => setIsEnquiryModalOpen(true)}
-              lang={lang}
-            />
-            <OurStorySection
-              onReadMore={() => handleNavigate('story')}
-              lang={lang}
-            />
-            <ProvenanceProtocolSection lang={lang} />
-            <JournalSection
-              onReadArticle={(article) => setSelectedArticle(article)}
-              lang={lang}
-            />
-            <TradeEnquirySection
-              onOpenModal={() => setIsEnquiryModalOpen(true)}
-              lang={lang}
-            />
-          </>
-        )}
-
-        {currentView === 'catalogue' && (
-          <CataloguePage
-            onBack={() => handleNavigate('home')}
-            onSelectProduct={handleSelectProduct}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            lang={lang}
+        <Routes>
+          <Route
+            path={paths.home}
+            element={
+              <HomePage
+                lang={lang}
+                onExploreProducts={() => handleNavigate('catalogue')}
+                onExploreStory={() => handleNavigate('story')}
+                onSelectProduct={handleSelectProduct}
+                onOpenEnquiry={openEnquiry}
+                onReadArticle={handleReadArticle}
+              />
+            }
           />
-        )}
-
-        {currentView === 'product-detail' && (
-          <ProductDetailPage
-            productId={selectedProductId}
-            onBack={() => handleNavigate('catalogue')}
-            onSelectProduct={handleSelectProduct}
-            onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-            lang={lang}
+          <Route
+            path={paths.products}
+            element={
+              <CataloguePage
+                onBack={() => handleNavigate('home')}
+                onSelectProduct={handleSelectProduct}
+                onOpenEnquiry={openEnquiry}
+                lang={lang}
+              />
+            }
           />
-        )}
+          <Route
+            path="/products/:productId"
+            element={
+              <ProductRoute
+                lang={lang}
+                onSelectProduct={handleSelectProduct}
+                onOpenEnquiry={openEnquiry}
+                onBack={() => handleNavigate('catalogue')}
+              />
+            }
+          />
+          <Route path={paths.about} element={<AboutPage lang={lang} />} />
+          <Route path={paths.sourcing} element={<SourcingPage lang={lang} />} />
+          <Route
+            path={paths.journal}
+            element={<JournalIndexPage lang={lang} onReadArticle={handleReadArticle} />}
+          />
+          <Route path="/journal/:articleId" element={<JournalArticlePage lang={lang} />} />
+          <Route
+            path={paths.contact}
+            element={<ContactPage lang={lang} onOpenEnquiry={openEnquiry} />}
+          />
+          <Route
+            path={paths.privacy}
+            element={
+              <LegalPage title={lang === 'fr' ? 'Politique de confidentialité' : 'Privacy Policy'} lang={lang}>
+                <p>
+                  This page describes how Chhoti Tokri may collect and use information from visitors to chhotitokri.com.
+                  Final legal text will be published after business and legal review.
+                </p>
+              </LegalPage>
+            }
+          />
+          <Route
+            path={paths.terms}
+            element={
+              <LegalPage
+                title={lang === 'fr' ? 'Conditions générales' : 'Terms and Conditions'}
+                lang={lang}
+              >
+                <p>
+                  This page will set out the terms for using chhotitokri.com as a brand information and enquiry site.
+                  Final legal text will be published after business and legal review.
+                </p>
+              </LegalPage>
+            }
+          />
+          <Route path="*" element={<Navigate to={paths.home} replace />} />
+        </Routes>
       </main>
 
-      {/* Archival Editorial Footer */}
-      <Footer
-        onNavigate={handleNavigate}
-        onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
-        lang={lang}
-      />
-
-      {/* Mobile Streamlined Bottom Nav Bar */}
+      <Footer onNavigate={handleNavigate} onOpenEnquiry={openEnquiry} lang={lang} />
       <BottomNav
         currentView={currentView}
         onNavigate={handleNavigate}
-        onOpenEnquiry={() => setIsEnquiryModalOpen(true)}
+        onOpenEnquiry={openEnquiry}
         lang={lang}
       />
 
-      {/* Interactive Business & Sample Enquiry Modal */}
       <EnquiryModal
         isOpen={isEnquiryModalOpen}
         onClose={() => setIsEnquiryModalOpen(false)}
         lang={lang}
       />
-
-      {/* Interactive Tokri Journal Article Reader Modal */}
-      <JournalReaderModal
-        article={selectedArticle}
-        onClose={() => setSelectedArticle(null)}
-        lang={lang}
-      />
-    </div>
+      </div>
+    </>
   );
 }

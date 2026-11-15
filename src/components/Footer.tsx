@@ -1,4 +1,6 @@
 import React from 'react';
+import {trackEvent} from '../analytics/gtag';
+import {CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY} from '../lib/contact';
 
 interface FooterProps {
   onNavigate: (view: string, productId?: string) => void;
@@ -152,10 +154,18 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, lang 
                 For retail distribution, Michelin restaurant provisioning, and bespoke packaging inquiries.
               </p>
               <a
-                href="mailto:liaison@chhotitokri.com?subject=Chhoti%20Tokri%20Trade%20Inquiry"
+                href={`mailto:${CONTACT_EMAIL}?subject=Chhoti%20Tokri%20Trade%20Inquiry`}
                 className="text-[#174D32] hover:text-[#B88A3B] text-[13px] font-semibold underline underline-offset-4 tracking-wider transition-colors block"
+                onClick={() => trackEvent('email_click', {link_location: 'footer'})}
               >
-                liaison@chhotitokri.com
+                {CONTACT_EMAIL}
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE}`}
+                className="text-[#174D32] hover:text-[#B88A3B] text-[13px] font-semibold tracking-wider transition-colors block mt-2"
+                onClick={() => trackEvent('phone_click', {link_location: 'footer'})}
+              >
+                {CONTACT_PHONE_DISPLAY}
               </a>
             </div>
           </div>
@@ -181,7 +191,26 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenEnquiry, lang 
               Trade Enquiries
             </button>
             <span>•</span>
-            <span className="text-[#727E77]">Export Compliance</span>
+            <button
+              onClick={() => onNavigate('contact')}
+              className="hover:text-[#174D32] transition-colors cursor-pointer"
+            >
+              Contact
+            </button>
+            <span>•</span>
+            <button
+              onClick={() => onNavigate('privacy')}
+              className="hover:text-[#174D32] transition-colors cursor-pointer"
+            >
+              Privacy
+            </button>
+            <span>•</span>
+            <button
+              onClick={() => onNavigate('terms')}
+              className="hover:text-[#174D32] transition-colors cursor-pointer"
+            >
+              Terms
+            </button>
           </div>
         </div>
       </div>

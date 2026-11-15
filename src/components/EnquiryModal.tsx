@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Mail, Building, Globe, Send, Download } from 'lucide-react';
 import { PROVISIONS } from '../data/provisions';
+import { trackEvent } from '../analytics/gtag';
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -34,6 +35,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose, lan
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
+    trackEvent('contact_form_submit', {form_type: 'trade_enquiry'});
     setSubmitted(true);
   };
 

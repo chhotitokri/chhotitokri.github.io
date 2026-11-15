@@ -1,0 +1,19 @@
+URL,Page Type,HTTP Status (expected),Indexability,Canonical,Title (implemented),H1,Proposed Action
+https://chhotitokri.com/,Home,200,index,https://chhotitokri.com/,Chhoti Tokri – Discover Quality Indian Foods,Good Food. Brighter Days.,Monitor after deploy
+https://chhotitokri.com/products,Catalogue,200,index,https://chhotitokri.com/products,Our Products | Chhoti Tokri,Our Products,Monitor after deploy
+https://chhotitokri.com/products/kala-namak-rice,Product,200,index,https://chhotitokri.com/products/kala-namak-rice,Kala Namak Rice | Chhoti Tokri,Product name,Monitor after deploy
+https://chhotitokri.com/products/mustard-oil,Product,200,index,https://chhotitokri.com/products/mustard-oil,Traditional Mustard Oil | Chhoti Tokri,Product name,Monitor after deploy
+https://chhotitokri.com/products/forest-honey,Product,200,index,https://chhotitokri.com/products/forest-honey,Pure Forest Honey | Chhoti Tokri,Product name,Monitor after deploy
+https://chhotitokri.com/products/turmeric,Product,200,index,https://chhotitokri.com/products/turmeric,Sun-Dried Turmeric | Chhoti Tokri,Product name,Monitor after deploy
+https://chhotitokri.com/products/dehydrated-fruits,Product,200,index,https://chhotitokri.com/products/dehydrated-fruits,Sun-Ripened Dehydrated Fruits | Chhoti Tokri,Product name,Monitor after deploy
+https://chhotitokri.com/about,About,200,index,https://chhotitokri.com/about,Our Story | Chhoti Tokri,sr-only + section H2,Monitor after deploy
+https://chhotitokri.com/our-sourcing,Sourcing,200,index,https://chhotitokri.com/our-sourcing,Our Sourcing & Quality | Chhoti Tokri,sr-only + section H2,Monitor after deploy
+https://chhotitokri.com/journal,Journal index,200,index,https://chhotitokri.com/journal,The Tokri Journal | Chhoti Tokri,sr-only + section H2,Monitor after deploy
+https://chhotitokri.com/journal/scent-of-siddhartha,Article,200,index,https://chhotitokri.com/journal/scent-of-siddhartha,Article title | Chhoti Tokri,Article H1,Monitor after deploy
+https://chhotitokri.com/journal/mustard-crucible,Article,200,index,https://chhotitokri.com/journal/mustard-crucible,Article title | Chhoti Tokri,Article H1,Monitor after deploy
+https://chhotitokri.com/journal/wild-flora-golden-dew,Article,200,index,https://chhotitokri.com/journal/wild-flora-golden-dew,Article title | Chhoti Tokri,Article H1,Monitor after deploy
+https://chhotitokri.com/contact,Contact,200,index,https://chhotitokri.com/contact,Contact & Trade Enquiries | Chhoti Tokri,Contact H1,Monitor after deploy
+https://chhotitokri.com/privacy-policy,Legal,200,index,https://chhotitokri.com/privacy-policy,Privacy Policy | Chhoti Tokri,Privacy Policy,Replace placeholder legal text
+https://chhotitokri.com/terms-and-conditions,Legal,200,index,https://chhotitokri.com/terms-and-conditions,Terms and Conditions | Chhoti Tokri,Terms,Replace placeholder legal text
+https://chhotitokri.com/robots.txt,Technical,200,N/A,N/A,N/A,N/A,Shipped via public/
+https://chhotitokri.com/sitemap.xml,Technical,200,N/A,N/A,N/A,N/A,Generated at build
